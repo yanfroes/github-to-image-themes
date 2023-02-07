@@ -69,18 +69,18 @@ interface Theme {
 
 function getPixelRatio() {
   if (typeof window === "undefined") {
-    return 2;
+    return 1;
   }
-  return 2;
+  return window.devicePixelRatio || 1;
 }
 
 const DATE_FORMAT = "yyyy-MM-dd";
-const boxWidth = 20;
-const boxMargin = 4;
-const textHeight = 30;
+const boxWidth = 10;
+const boxMargin = 2;
+const textHeight = 15;
 const defaultFontFace = "IBM Plex Mono";
-const headerHeight = 120;
-const canvasMargin = 40;
+const headerHeight = 60;
+const canvasMargin = 20;
 const yearHeight = textHeight + (boxWidth + boxMargin) * 8 + canvasMargin;
 const scaleFactor = getPixelRatio();
 
