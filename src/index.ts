@@ -82,7 +82,7 @@ const defaultFontFace = "IBM Plex Mono";
 const headerHeight = 60;
 const canvasMargin = 20;
 const yearHeight = textHeight + (boxWidth + boxMargin) * 8 + canvasMargin;
-const scaleFactor = getPixelRatio();
+const scaleFactor = getPixelRatio() * 2;
 
 function getTheme(opts: Options): Theme {
   const { themeName, customTheme } = opts;
@@ -279,8 +279,8 @@ export function drawContributions(canvas: HTMLCanvasElement, opts: Options) {
     data.years.length * yearHeight + canvasMargin + headerOffset + 10;
   const width = 53 * (boxWidth + boxMargin) + canvasMargin * 2;
 
-  canvas.width = width * scaleFactor * 2;
-  canvas.height = height * scaleFactor * 2;
+  canvas.width = width * scaleFactor;
+  canvas.height = height * scaleFactor;
 
   const ctx = canvas.getContext("2d");
 
